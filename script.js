@@ -18,7 +18,7 @@ const currentTime = {
   currentYear: new Date().getFullYear(),
 };
 
-setDate(currentTime);
+setDate({'--', '--', '--'});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
