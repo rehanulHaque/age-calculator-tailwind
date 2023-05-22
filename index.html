@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- Fontawsome CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- google fonts -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,100;1,700&display=swap');
   </style>
   <!-- Tailwind CDNJS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Frontend Mentor | Age calculator app</title>
+  <title>Age calculator app</title>
 
 </head>
-<body class="bg-slate-200 lg:flex lg:items-center lg:justify-center lg:mt-12 md:flex md:items-center md:justify-center md:mt-12" style="font-family: 'Poppins', sans-serif;">
-  <!-- Golobal container -->
-  <div class="bg-white m-4 p-4 pt-8 mt-8 rounded-xl rounded-br-[70px] lg:w-[35rem] md:w-[35rem] relative">
+
+<body class="bg-slate-200">
+
+  <div class="lg:flex lg:items-center lg:justify-center lg:mt-12 md:flex md:items-center md:justify-center md:mt-12"
+    style="font-family: 'Poppins', sans-serif;">
+
+
+    <!-- Golobal container -->
+    <div class="bg-white m-4 p-4 pt-6 mt-2  rounded-xl rounded-br-[70px] lg:w-[35rem] md:w-[35rem] relative">
 
       <!-- Inputs container -->
-    <form id="form" class="flex justify-between px-3 lg:justify-start md:justify-start">
+      <form id="form" class="flex justify-between px-3 lg:justify-start md:justify-start">
 
-      <!-- form box -->
+        <!-- form box -->
 
-      <div class=" flex flex-col lg:mr-4 md:mr-4">
-        <h4 class="text-xl font-bold text-gray-700">Day</h4>
-        <input type="text" autocomplete="off" name="givenDate" placeholder="DD" class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
+        <div class=" flex flex-col lg:mr-4 md:mr-4">
+          <h4 class="text-xl font-bold text-gray-700">Day</h4>
+          <input type="text" autocomplete="off" name="givenDate" placeholder="DD"
+            class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
+        </div>
+
+        <!-- form box -->
+
+        <div class=" flex flex-col lg:mr-4 md:mr-4">
+          <h4 class="text-xl font-bold text-gray-700">Month</h4>
+          <input type="text" autocomplete="off" name="givenMonth" placeholder="MM"
+            class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
+        </div>
+
+        <!-- form box -->
+
+        <div class=" flex flex-col">
+          <h4 class="text-xl font-bold text-gray-700">Year</h4>
+          <input type="text" autocomplete="off" name="givenYear" placeholder="YYYY"
+            class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
+        </div>
+        <button type="submit" class="hidden">submit</button>
+      </form>
+      <span class="hidden text-red-600 text-sm ml-4" id="error-msg"></span>
+      <img src="./images/icon-arrow.svg" alt="ARROW"
+        class="absolute top-36 -translate-x-1/2 left-1/2 bg-purple-700 p-4 rounded-full">
+      <hr class="my-16 lg:my-14 md:my-14">
+
+
+      <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight"
+        style="font-style: italic;"><span class="text-purple-700" id="day">38</span> Year</div>
+      <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight"
+        style="font-style: italic;"><span class="text-purple-700" id="month">2</span> months</div>
+      <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight"
+        style="font-style: italic;"><span class="text-purple-700" id="year">26</span> days</div>
+    </div>
+  </div>
+  <footer class="flex flex-col justify-center items-center text-center">
+    <div>
+      <p>Made By Md Rehanul Haque</p>
+      <div>
+        <a href="https://www.instagram.com/rehan_._cr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.github.com/rehanulhaque" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mdrehanulhaque1/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+
       </div>
-
-      <!-- form box -->
-
-      <div class=" flex flex-col lg:mr-4 md:mr-4">
-        <h4 class="text-xl font-bold text-gray-700">Month</h4>
-        <input type="text" autocomplete="off" name="givenMonth" placeholder="MM" class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
-      </div>
-
-      <!-- form box -->
-
-      <div class=" flex flex-col">
-        <h4 class="text-xl font-bold text-gray-700">Year</h4>
-        <input type="text" autocomplete="off" name="givenYear" placeholder="YYYY" class="outline-none px-3 py-3 rounded-md border border-gray-400 w-20 mt-2 placeholder:font-bold lg:w-24 md:w-24">
-      </div>
-      <button type="submit" class="hidden">submit</button>
-    </form>
-    <span class="hidden text-red-600 text-sm ml-4" id="error-msg"></span>
-    <img src="./images/icon-arrow.svg" alt="ARROW" class="absolute top-36 -translate-x-1/2 left-1/2 bg-purple-700 p-4 rounded-full">
-    <hr class="my-16 lg:my-14 md:my-14">
-
-
-    <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight" style="font-style: italic;"><span class="text-purple-700" id="day">38</span> Year</div>
-    <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight" style="font-style: italic;"><span class="text-purple-700" id="month">2</span> months</div>
-    <div class="text-[40px] font-bold lg:text-[60px] md:text-[60px] m-0 p-0 leading-tight" style="font-style: italic;"><span class="text-purple-700" id="year">26</span> days</div>
-</div>
+    </div>
+  </footer>
 </body>
 <script src="script.js"></script>
+
 </html>
